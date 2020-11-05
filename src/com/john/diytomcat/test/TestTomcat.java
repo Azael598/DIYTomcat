@@ -17,34 +17,37 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class TestTomcat {
-    private static int port=18080;
-    private static String ip ="127.0.0.1";
+    private static int port = 18080;
+    private static String ip = "127.0.0.1";
+
     @BeforeClass
-    public static void beforeClass(){
-        if (NetUtil.isUsableLocalPort(port)){
-            System.err.println("请先启动位于端口："+port+"的DIYTomcat");
+    public static void beforeClass() {
+        if (NetUtil.isUsableLocalPort(port)) {
+            System.err.println("请先启动位于端口：" + port + "的DIYTomcat");
             System.exit(1);
-        }else {
+        } else {
             System.out.println("DIYTomcat 已启动，开始单元测试");
         }
     }
 
     @Test
-    public void testHelloTomcat(){
+    public void testHelloTomcat() {
         String html = getContentString("/");
-        Assert.assertEquals(html,"Hello DIY Tomcat");
+        Assert.assertEquals(html, "Hello DIY Tomcat");
     }
+
     @Test
-    public void testaHtml(){
+    public void testaHtml() {
         String html = getContentString("/a.html");
-        Assert.assertEquals(html,"Hello DIY Tomcat from a.html");
+        Assert.assertEquals(html, "Hello DIY Tomcat from a.html");
     }
+
     @Test
-    public void testTimeConsumeHtml() throws InterruptedException{
-        ThreadPoolExecutor threadPool = new ThreadPoolExecutor(20,20 ,60 , TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(10));
+    public void testTimeConsumeHtml() throws InterruptedException {
+        ThreadPoolExecutor threadPool = new ThreadPoolExecutor(20, 20, 60, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(10));
         TimeInterval timeInterval = DateUtil.timer();
 
-        for(int i=0;i<3;i++){
+        for (int i = 0; i < 3; i++) {
             threadPool.execute(new Runnable() {
                 @Override
                 public void run() {
@@ -53,14 +56,22 @@ public class TestTomcat {
             });
         }
         threadPool.shutdown();
-        threadPool.awaitTermination(1,TimeUnit.HOURS);
+        threadPool.awaitTermination(1, TimeUnit.HOURS);
         long duration = timeInterval.intervalMs();
-        Assert.assertTrue(duration>3000);
+        Assert.assertTrue(duration < 3000);
     }
-    private String getContentString(String uri){
-        String url= StrUtil.format("http://{}:{}{}",ip,port,uri);
+
+    private String getContentString(String uri) {
+        String url = StrUtil.format("http://{}:{}{}", ip, port, uri);
         String content = MiniBrowser.getContentString(url);
-        return  content;
+        return content;
     }
+
+    @Test
+    public void testaIndex() {
+        String html = getContentString("/a/index.html");
+        Assert.assertEquals(html,"Hello DIY Tomcat from index.html@a");
+    }
+
 
 }
