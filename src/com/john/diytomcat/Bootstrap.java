@@ -11,6 +11,7 @@ import com.john.diytomcat.catalina.Context;
 import com.john.diytomcat.http.Request;
 import com.john.diytomcat.http.Response;
 import com.john.diytomcat.util.Constant;
+import com.john.diytomcat.util.ServerXMLUtil;
 import com.john.diytomcat.util.ThreadPoolUtil;
 import org.jsoup.internal.StringUtil;
 import sun.swing.StringUIClientPropertyKey;
@@ -21,18 +22,16 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Bootstrap {
-    public static Map<String,Context> contextMap = new HashMap<>();
+    public static Map<String, Context> contextMap = new HashMap<>();
 
     public static void main(String[] args) {
         try {
             logJVM();
             scanContextsOnWebAppsFolder();
+            scanContextsInServerXML();
             int port = 18080;
 //            if (!NetUtil.isUsableLocalPort(port)){
 //                System.out.println("port has already been used");
@@ -46,8 +45,8 @@ public class Bootstrap {
                     public void run() {
                         try {
                             Request request = new Request(s);
-                           // System.out.println("浏览器的输入信息： \r\n" + request.getRequestString());
-                           // System.out.println("uri:" + request.getUri());
+                            // System.out.println("浏览器的输入信息： \r\n" + request.getRequestString());
+                            // System.out.println("uri:" + request.getUri());
 
                             //Refactor the response module
                             Response response = new Response();
@@ -87,26 +86,33 @@ public class Bootstrap {
         }
     }
 
-    private static void scanContextsOnWebAppsFolder(){
+    private static void scanContextsInServerXML() {
+        List<Context> contexts = ServerXMLUtil.getContexts();
+        for (Context context : contexts) {
+            contextMap.put(context.getPath(), context);
+        }
+    }
+
+    private static void scanContextsOnWebAppsFolder() {
         File[] folders = Constant.webappsFolder.listFiles();
-        for (File folder : folders){
-            if (!folder.isDirectory()){
+        for (File folder : folders) {
+            if (!folder.isDirectory()) {
                 continue;
             }
             loadContext(folder);
         }
     }
 
-    private static void loadContext(File folder){
+    private static void loadContext(File folder) {
         String path = folder.getName();
-        if ("ROOT".equals(path)){
-            path="/";
-        }else {
-            path="/"+path;
+        if ("ROOT".equals(path)) {
+            path = "/";
+        } else {
+            path = "/" + path;
         }
         String docBase = folder.getAbsolutePath();
-        Context context = new Context(path,docBase);
-        contextMap.put(context.getPath(),context);
+        Context context = new Context(path, docBase);
+        contextMap.put(context.getPath(), context);
     }
 
     private static void logJVM() {
