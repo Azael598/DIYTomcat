@@ -8,6 +8,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
 import cn.hutool.system.SystemUtil;
 import com.john.diytomcat.catalina.Context;
+import com.john.diytomcat.catalina.Host;
 import com.john.diytomcat.http.Request;
 import com.john.diytomcat.http.Response;
 import com.john.diytomcat.util.Constant;
@@ -30,8 +31,9 @@ public class Bootstrap {
     public static void main(String[] args) {
         try {
             logJVM();
-            scanContextsOnWebAppsFolder();
-            scanContextsInServerXML();
+//            scanContextsOnWebAppsFolder();
+//            scanContextsInServerXML();
+            Host host = new Host();
             int port = 18080;
 //            if (!NetUtil.isUsableLocalPort(port)){
 //                System.out.println("port has already been used");
@@ -44,7 +46,7 @@ public class Bootstrap {
                     @Override
                     public void run() {
                         try {
-                            Request request = new Request(s);
+                            Request request = new Request(s,host);
                             // System.out.println("浏览器的输入信息： \r\n" + request.getRequestString());
                             // System.out.println("uri:" + request.getUri());
 
@@ -86,7 +88,7 @@ public class Bootstrap {
         }
     }
 
-    private static void scanContextsInServerXML() {
+/*    private static void scanContextsInServerXML() {
         List<Context> contexts = ServerXMLUtil.getContexts();
         for (Context context : contexts) {
             contextMap.put(context.getPath(), context);
@@ -113,7 +115,7 @@ public class Bootstrap {
         String docBase = folder.getAbsolutePath();
         Context context = new Context(path, docBase);
         contextMap.put(context.getPath(), context);
-    }
+    }*/
 
     private static void logJVM() {
         Map<String, String> infos = new LinkedHashMap<>();

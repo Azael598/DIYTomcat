@@ -2,6 +2,7 @@ package com.john.diytomcat.http;
 
 import com.john.diytomcat.Bootstrap;
 import com.john.diytomcat.catalina.Context;
+import com.john.diytomcat.catalina.Host;
 import com.john.diytomcat.util.MiniBrowser;
 import cn.hutool.core.util.StrUtil;
 
@@ -16,9 +17,11 @@ public class Request {
     private String uri;
     private Socket socket;
     private Context context;
+    private Host host;
 
-    public Request(Socket socket) throws IOException {
+    public Request(Socket socket, Host host) throws IOException {
         this.socket = socket;
+        this.host = host;
         parseHttpRequest();
         if(StrUtil.isEmpty(requestString))
             return;
@@ -36,9 +39,9 @@ public class Request {
         }else {
             path="/"+path;
         }
-        context = Bootstrap.contextMap.get(path);
+        context = host.getContext(path);
         if (null==context){
-            context=Bootstrap.contextMap.get("/");
+            context=host.getContext("/");
         }
     }
 
@@ -49,7 +52,7 @@ public class Request {
         requestString = new String(bytes, "utf-8");
     }
 
-    //get uri form httpRequest
+    //get uri from httpRequest
     private void parseUri() {
         String temp;
 
