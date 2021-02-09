@@ -8,7 +8,9 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
 import cn.hutool.system.SystemUtil;
 import com.john.diytomcat.catalina.Context;
+import com.john.diytomcat.catalina.Engine;
 import com.john.diytomcat.catalina.Host;
+import com.john.diytomcat.catalina.Service;
 import com.john.diytomcat.http.Request;
 import com.john.diytomcat.http.Response;
 import com.john.diytomcat.util.Constant;
@@ -33,7 +35,7 @@ public class Bootstrap {
             logJVM();
 //            scanContextsOnWebAppsFolder();
 //            scanContextsInServerXML();
-            Host host = new Host();
+            Service service = new Service();
             int port = 18080;
 //            if (!NetUtil.isUsableLocalPort(port)){
 //                System.out.println("port has already been used");
@@ -46,7 +48,7 @@ public class Bootstrap {
                     @Override
                     public void run() {
                         try {
-                            Request request = new Request(s,host);
+                            Request request = new Request(s,service);
                             // System.out.println("浏览器的输入信息： \r\n" + request.getRequestString());
                             // System.out.println("uri:" + request.getUri());
 

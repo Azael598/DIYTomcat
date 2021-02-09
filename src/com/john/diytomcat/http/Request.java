@@ -2,7 +2,9 @@ package com.john.diytomcat.http;
 
 import com.john.diytomcat.Bootstrap;
 import com.john.diytomcat.catalina.Context;
+import com.john.diytomcat.catalina.Engine;
 import com.john.diytomcat.catalina.Host;
+import com.john.diytomcat.catalina.Service;
 import com.john.diytomcat.util.MiniBrowser;
 import cn.hutool.core.util.StrUtil;
 
@@ -17,11 +19,11 @@ public class Request {
     private String uri;
     private Socket socket;
     private Context context;
-    private Host host;
+    private Service service;
 
-    public Request(Socket socket, Host host) throws IOException {
+    public Request(Socket socket, Service service) throws IOException {
         this.socket = socket;
-        this.host = host;
+        this.service = service;
         parseHttpRequest();
         if(StrUtil.isEmpty(requestString))
             return;
@@ -39,9 +41,10 @@ public class Request {
         }else {
             path="/"+path;
         }
-        context = host.getContext(path);
+        Engine engine = service.getEngine();
+        context = engine.getDefaultHost().getContext(path);
         if (null==context){
-            context=host.getContext("/");
+            context=engine.getDefaultHost().getContext("/");
         }
     }
 
