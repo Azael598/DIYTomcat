@@ -25,26 +25,30 @@ public class Request {
         this.socket = socket;
         this.service = service;
         parseHttpRequest();
-        if(StrUtil.isEmpty(requestString))
+        if (StrUtil.isEmpty(requestString))
             return;
         parseUri();
         parseContext();
-        if (!"/".equals(context.getPath())){
-            uri=StrUtil.removePrefix(uri,context.getPath());
+        if (!"/".equals(context.getPath())) {
+            uri = StrUtil.removePrefix(uri, context.getPath());
+            if (StrUtil.isEmpty(uri))
+                uri = "/";
         }
     }
 
-    private void parseContext(){
-        String path = StrUtil.subBetween(uri,"/","/");
-        if (null==path){
-            path="/";
-        }else {
-            path="/"+path;
-        }
+    private void parseContext() {
         Engine engine = service.getEngine();
+        context = engine.getDefaultHost().getContext(uri);
+        if (null != context) return;
+        String path = StrUtil.subBetween(uri, "/", "/");
+        if (null == path) {
+            path = "/";
+        } else {
+            path = "/" + path;
+        }
         context = engine.getDefaultHost().getContext(path);
-        if (null==context){
-            context=engine.getDefaultHost().getContext("/");
+        if (null == context) {
+            context = engine.getDefaultHost().getContext("/");
         }
     }
 
@@ -72,7 +76,7 @@ public class Request {
         return uri;
     }
 
-    public String getRequestString(){
+    public String getRequestString() {
         return requestString;
     }
 

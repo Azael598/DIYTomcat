@@ -10,6 +10,7 @@ import com.john.diytomcat.http.Request;
 import com.john.diytomcat.http.Response;
 import com.john.diytomcat.util.Constant;
 import com.john.diytomcat.util.ThreadPoolUtil;
+import com.john.diytomcat.util.WebXMLUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -54,22 +55,22 @@ public class Server {
                                 throw new Exception("this is a deliberately created exception");
                             }
                             if ("/".equals(uri)) {
-                                String html = "Hello DIY Tomcat";
-                                response.getWriter().println(html);
-                            } else {
-                                String fileName = StrUtil.removePrefix(uri, "/");
-                                File file = FileUtil.file(context.getDocBase(), fileName);
-                                if (file.exists()) {
-                                    String fileContent = FileUtil.readUtf8String(file);
-                                    response.getWriter().println(fileContent);
-                                    if (fileName.equals("timeConsume.html")) {
-                                        ThreadUtil.sleep(1000);
-                                    }
-                                } else {
-                                    handle404(s, uri);
-                                    return;
-                                }
+                                uri = WebXMLUtil.getWelcomeFile(request.getContext());
+
                             }
+                            String fileName = StrUtil.removePrefix(uri, "/");
+                            File file = FileUtil.file(context.getDocBase(), fileName);
+                            if (file.exists()) {
+                                String fileContent = FileUtil.readUtf8String(file);
+                                response.getWriter().println(fileContent);
+                                if (fileName.equals("timeConsume.html")) {
+                                    ThreadUtil.sleep(1000);
+                                }
+                            } else {
+                                handle404(s, uri);
+                                return;
+                            }
+
                             handle200(s, response);
                         } catch (Exception e) {
                             LogFactory.get().error(e);
