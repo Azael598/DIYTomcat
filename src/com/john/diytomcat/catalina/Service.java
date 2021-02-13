@@ -5,7 +5,9 @@ import com.john.diytomcat.util.ServerXMLUtil;
 public class Service {
     private String name;
     private Engine engine;
-    public Service(){
+    private Server server;
+    public Service(Server server){
+        this.server = server;
         this.name = ServerXMLUtil.getServiceName();
         this.engine = new Engine(this);
     }
