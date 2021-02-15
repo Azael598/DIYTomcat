@@ -1,9 +1,7 @@
 package com.john.diytomcat.http;
 
-import com.john.diytomcat.Bootstrap;
 import com.john.diytomcat.catalina.Context;
 import com.john.diytomcat.catalina.Engine;
-import com.john.diytomcat.catalina.Host;
 import com.john.diytomcat.catalina.Service;
 import com.john.diytomcat.util.MiniBrowser;
 import cn.hutool.core.util.StrUtil;
@@ -55,7 +53,7 @@ public class Request {
     //trans bytes array from client to requestString
     private void parseHttpRequest() throws IOException {
         InputStream is = this.socket.getInputStream();
-        byte[] bytes = MiniBrowser.readBytes(is);
+        byte[] bytes = MiniBrowser.readBytes(is, false);
         requestString = new String(bytes, "utf-8");
     }
 
