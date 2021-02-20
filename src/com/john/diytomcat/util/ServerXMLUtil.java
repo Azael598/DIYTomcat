@@ -1,9 +1,8 @@
 package com.john.diytomcat.util;
 
+import cn.hutool.core.convert.Convert;
 import cn.hutool.core.io.FileUtil;
-import com.john.diytomcat.catalina.Context;
-import com.john.diytomcat.catalina.Engine;
-import com.john.diytomcat.catalina.Host;
+import com.john.diytomcat.catalina.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,6 +12,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServerXMLUtil {
+    public static List<Connector> getConnectors(Service service) {
+        List<Connector> result = new ArrayList<>();
+        String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
+        Document d = Jsoup.parse(xml);
+        Elements es = d.select("Connector");
+        for (Element e : es) {
+            int port = Convert.toInt(e.attr("port"));
+            Connector c = new Connector(service);
+            c.setPort(port);
+            result.add(c);
+        }
+        return result;
+    }
+
     public static List<Context> getContexts() {
         List<Context> result = new ArrayList<>();
         String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
@@ -28,14 +41,14 @@ public class ServerXMLUtil {
         return result;
     }
 
-    public static String getEngineDefaultHost(){
+    public static String getEngineDefaultHost() {
         String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
         Document d = Jsoup.parse(xml);
         Element host = d.select("Engine").first();
         return host.attr("defaultHost");
     }
 
-    public static String getServiceName(){
+    public static String getServiceName() {
         String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
         Document d = Jsoup.parse(xml);
 
@@ -43,15 +56,15 @@ public class ServerXMLUtil {
         return host.attr("name");
     }
 
-    public static List<Host> getHosts(Engine engine){
+    public static List<Host> getHosts(Engine engine) {
         List<Host> result = new ArrayList<>();
         String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
         Document d = Jsoup.parse(xml);
 
         Elements es = d.select("Host");
-        for(Element e : es){
+        for (Element e : es) {
             String name = e.attr("name");
-            Host host = new Host(name,engine);
+            Host host = new Host(name, engine);
             result.add(host);
         }
         return result;
