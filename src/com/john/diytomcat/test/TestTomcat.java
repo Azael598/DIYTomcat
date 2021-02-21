@@ -127,4 +127,10 @@ public class TestTomcat {
         int pdfFileLength = 3590775;
         Assert.assertEquals(pdfFileLength,bytes.length);
     }
+
+    @Test
+    public void testHello() {
+        String html = getContentString("/hello");
+        Assert.assertEquals(html,"Hello DIY Tomcat from HelloServlet");
+    }
 }

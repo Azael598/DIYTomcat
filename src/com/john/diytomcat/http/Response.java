@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 
-public class Response {
+public class Response extends BaseResponse{
 
     private StringWriter stringWriter;
     private PrintWriter writer;
@@ -40,4 +40,5 @@ public class Response {
     public void setBody(byte[] body){
         this.body = body;
     }
+
 }

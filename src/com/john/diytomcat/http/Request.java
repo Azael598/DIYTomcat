@@ -1,17 +1,16 @@
 package com.john.diytomcat.http;
 
+import cn.hutool.core.util.StrUtil;
 import com.john.diytomcat.catalina.Context;
 import com.john.diytomcat.catalina.Engine;
 import com.john.diytomcat.catalina.Service;
 import com.john.diytomcat.util.MiniBrowser;
-import cn.hutool.core.util.StrUtil;
-
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
 
-public class Request {
+public class Request extends BaseRequest{
 
     private String requestString;
     private String uri;
