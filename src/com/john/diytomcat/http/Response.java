@@ -4,12 +4,13 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 
-public class Response extends BaseResponse{
+public class Response extends BaseResponse {
 
     private StringWriter stringWriter;
     private PrintWriter writer;
     private String contentType;
     private byte[] body;
+    private int status;
 
     public Response() {
         this.stringWriter = new StringWriter();
@@ -37,8 +38,18 @@ public class Response extends BaseResponse{
         this.contentType = contentType;
     }
 
-    public void setBody(byte[] body){
+    public void setBody(byte[] body) {
         this.body = body;
+    }
+
+    @Override
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    @Override
+    public int getStatus() {
+        return status;
     }
 
 }
