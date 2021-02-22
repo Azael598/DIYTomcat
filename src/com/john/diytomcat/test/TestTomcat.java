@@ -130,7 +130,7 @@ public class TestTomcat {
 
     @Test
     public void testHello() {
-        String html = getContentString("/hello");
+        String html = getContentString("/j2ee/hello");
         Assert.assertEquals(html,"Hello DIY Tomcat from HelloServlet");
     }
 }

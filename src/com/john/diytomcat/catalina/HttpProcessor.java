@@ -3,6 +3,7 @@ package com.john.diytomcat.catalina;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.ArrayUtil;
+import cn.hutool.core.util.ReflectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
 import com.john.diytomcat.http.Request;
@@ -17,60 +18,58 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 public class HttpProcessor {
-    public void execute(Socket s, Request request, Response response){
+    public void execute(Socket s, Request request, Response response) {
         try {
             String uri = request.getUri();
-            if(null==uri)
+            if (null == uri)
                 return;
 
             Context context = request.getContext();
+            String servletClassName = context.getServletClassName(uri);
 
-            if("/500.html".equals(uri)){
-                throw new Exception("this is a deliberately created exception");
-            }
+            if (null != servletClassName) {
+                Object servletObject = ReflectUtil.newInstance(servletClassName);
+                ReflectUtil.invoke(servletObject, "doGet", request, response);
+            } else {
+                if ("/500.html".equals(uri)) {
+                    throw new Exception("this is a deliberately created exception");
+                } else {
+                    if ("/".equals(uri))
+                        uri = WebXMLUtil.getWelcomeFile(request.getContext());
 
-            if("/hello".equals(uri)){
-                HelloServlet helloServlet = new HelloServlet();
-                helloServlet.doGet(request,response);
-            }else
-            {
-                if("/".equals(uri))
-                    uri = WebXMLUtil.getWelcomeFile(request.getContext());
+                    String fileName = StrUtil.removePrefix(uri, "/");
+                    File file = FileUtil.file(context.getDocBase(), fileName);
 
+                    if (file.exists()) {
+                        String extName = FileUtil.extName(file);
+                        String mimeType = WebXMLUtil.getMimeType(extName);
+                        response.setContentType(mimeType);
 
-                String fileName = StrUtil.removePrefix(uri, "/");
-                File file = FileUtil.file(context.getDocBase(),fileName);
+                        byte body[] = FileUtil.readBytes(file);
+                        response.setBody(body);
 
-                if(file.exists()){
-                    String extName = FileUtil.extName(file);
-                    String mimeType = WebXMLUtil.getMimeType(extName);
-                    response.setContentType(mimeType);
-
-                    byte body[] = FileUtil.readBytes(file);
-                    response.setBody(body);
-
-                    if(fileName.equals("timeConsume.html"))
-                        ThreadUtil.sleep(1000);
-                }
-                else{
-                    handle404(s, uri);
-                    return;
+                        if (fileName.equals("timeConsume.html"))
+                            ThreadUtil.sleep(1000);
+                    } else {
+                        handle404(s, uri);
+                        return;
+                    }
                 }
             }
             handle200(s, response);
         } catch (Exception e) {
             LogFactory.get().error(e);
-            handle500(s,e);
-        }
-        finally{
+            handle500(s, e);
+        } finally {
             try {
-                if(!s.isClosed())
+                if (!s.isClosed())
                     s.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
+
     private static void handle200(Socket s, Response response) throws IOException {
         String contentType = response.getContentType();
         String headText = Constant.response_head_202;
