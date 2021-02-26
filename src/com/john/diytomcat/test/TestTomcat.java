@@ -133,4 +133,10 @@ public class TestTomcat {
         String html = getContentString("/j2ee/hello");
         Assert.assertEquals(html,"Hello DIY Tomcat from HelloServlet");
     }
+
+    @Test
+    public void testJavawebHello(){
+        String html = getContentString("/javaweb/hello");
+        Assert.assertEquals(html, "Hello DIY Tomcat from HelloServlet@javaweb");
+    }
 }
