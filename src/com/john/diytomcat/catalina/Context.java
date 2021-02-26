@@ -9,6 +9,7 @@ import com.john.diytomcat.classloader.WebappClassLoader;
 import com.john.diytomcat.exception.WebConfigDuplicatedException;
 import com.john.diytomcat.util.Constant;
 import com.john.diytomcat.util.ContextXMLUtil;
+import com.john.diytomcat.watcher.ContextFileChangeWatcher;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -22,13 +23,17 @@ public class Context {
     private String docBase;
     private File contextWebXmlFile;
     private WebappClassLoader webappClassLoader;
+    private Host host;
+    private boolean reloadable;
 
     private Map<String,String> url_servletClassName;
     private Map<String, String> url_servletName;
     private Map<String, String> servletName_className;
     private Map<String, String> className_servletName;
 
-    public Context(String path, String docBase ){
+    private ContextFileChangeWatcher contextFileChangeWatcher;
+
+    public Context(String path, String docBase, Host host, boolean reloadable ){
 
         this.path=path;
         this.docBase=docBase;
@@ -39,14 +44,27 @@ public class Context {
         this.className_servletName = new HashMap<>();
         ClassLoader commonClassLoader = Thread.currentThread().getContextClassLoader();
         this.webappClassLoader = new WebappClassLoader(docBase, commonClassLoader);
+        this.host = host;
+        this.reloadable = reloadable;
         deploy();
 
 
+    }
+    public void stop(){
+        webappClassLoader.stop();
+        contextFileChangeWatcher.stop();
+    }
+    public void reload(){
+        host.reload(this);
     }
     private void deploy(){
         TimeInterval timeInterval = DateUtil.timer();
         LogFactory.get().info("Deploying web application directory {}",this.docBase);
         init();
+        if (reloadable){
+            contextFileChangeWatcher = new ContextFileChangeWatcher(this);
+            contextFileChangeWatcher.start();
+        }
         LogFactory.get().info("Deployment of web application directory {} has finished in {} ms", this.docBase,timeInterval.intervalMs());
     }
     private void init(){
@@ -126,6 +144,14 @@ public class Context {
 
     public void setDocBase(String docBase) {
         this.docBase = docBase;
+    }
+
+    public boolean isReloadable() {
+        return reloadable;
+    }
+
+    public void setReloadable(boolean reloadable) {
+        this.reloadable = reloadable;
     }
 
     public WebappClassLoader getWebappClassLoader(){

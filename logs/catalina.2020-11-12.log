@@ -1,0 +1,90 @@
+11 12, 2020 10:24:14 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+11 12, 2020 10:24:14 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Server built:		2020-11-1 14:11:00
+11 12, 2020 10:24:14 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Server number:		1.0.0
+11 12, 2020 10:24:14 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : OS Name	:		Windows 10
+11 12, 2020 10:24:14 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : OS Version:		10.0
+11 12, 2020 10:24:14 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Architecture:		amd64
+11 12, 2020 10:24:14 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_241\jre
+11 12, 2020 10:24:14 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : JVM Version:		1.8.0_241-b07
+11 12, 2020 10:24:14 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : JVM Vendor:		Oracle Corporation
+11 12, 2020 10:24:14 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+11 12, 2020 10:24:14 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 0 ms
+11 12, 2020 10:24:14 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+11 12, 2020 10:24:14 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 0 ms
+11 12, 2020 10:24:14 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory 
+11 12, 2020 10:24:14 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory  has finished in 0 ms
+11 12, 2020 10:26:28 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+11 12, 2020 10:26:28 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Server built:		2020-11-1 14:11:00
+11 12, 2020 10:26:28 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Server number:		1.0.0
+11 12, 2020 10:26:28 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : OS Name	:		Windows 10
+11 12, 2020 10:26:28 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : OS Version:		10.0
+11 12, 2020 10:26:28 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Architecture:		amd64
+11 12, 2020 10:26:28 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_241\jre
+11 12, 2020 10:26:28 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : JVM Version:		1.8.0_241-b07
+11 12, 2020 10:26:28 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : JVM Vendor:		Oracle Corporation
+11 12, 2020 10:26:28 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+11 12, 2020 10:26:28 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 1 ms
+11 12, 2020 10:26:28 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+11 12, 2020 10:26:28 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 0 ms
+11 12, 2020 10:26:29 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory 
+11 12, 2020 10:26:29 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory  has finished in 1 ms
+11 12, 2020 10:31:15 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+11 12, 2020 10:31:15 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Server built:		2020-11-1 14:11:00
+11 12, 2020 10:31:15 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Server number:		1.0.0
+11 12, 2020 10:31:15 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : OS Name	:		Windows 10
+11 12, 2020 10:31:15 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : OS Version:		10.0
+11 12, 2020 10:31:15 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Architecture:		amd64
+11 12, 2020 10:31:15 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_241\jre
+11 12, 2020 10:31:15 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : JVM Version:		1.8.0_241-b07
+11 12, 2020 10:31:15 上午 com.john.diytomcat.Bootstrap logJVM
+INFO : JVM Vendor:		Oracle Corporation
+11 12, 2020 10:31:15 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+11 12, 2020 10:31:15 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 1 ms
+11 12, 2020 10:31:15 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+11 12, 2020 10:31:15 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 0 ms
+11 12, 2020 10:31:15 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+11 12, 2020 10:31:15 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 1 ms

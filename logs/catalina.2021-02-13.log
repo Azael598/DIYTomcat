@@ -1,0 +1,313 @@
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 159 ms
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 0 ms
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 0 ms
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.0
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+02 13, 2021 09:34:26 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 191 ms
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 1 ms
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 1 ms
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.0
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+02 13, 2021 10:24:00 上午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+02 13, 2021 10:24:05 上午 com.john.diytomcat.catalina.Server$1 error
+ERROR: this is a deliberately created exception
+java.lang.Exception: this is a deliberately created exception
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:54)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 128 ms
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 1 ms
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 0 ms
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.0
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+02 13, 2021 16:11:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+02 13, 2021 16:11:29 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:11:29 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:11:29 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:11:30 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:11:30 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:11:30 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:11:30 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 134 ms
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 0 ms
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 0 ms
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.0
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+02 13, 2021 16:23:54 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+02 13, 2021 16:24:00 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: this is a deliberately created exception
+java.lang.Exception: this is a deliberately created exception
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:55)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 129 ms
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 0 ms
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 0 ms
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.0
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+02 13, 2021 16:25:00 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+02 13, 2021 16:25:04 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:25:04 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:25:04 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:25:04 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:25:04 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:25:04 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:25:04 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: 
+java.lang.NullPointerException
+	at com.john.diytomcat.http.Request.<init>(Request.java:32)
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 132 ms
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 1 ms
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Context <init>
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 0 ms
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.0
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+02 13, 2021 16:26:27 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+02 13, 2021 16:26:31 下午 com.john.diytomcat.catalina.Server$1 error
+ERROR: this is a deliberately created exception
+java.lang.Exception: this is a deliberately created exception
+	at com.john.diytomcat.catalina.Server$1.run(Server.java:55)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)

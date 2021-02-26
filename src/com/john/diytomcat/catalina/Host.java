@@ -1,5 +1,6 @@
 package com.john.diytomcat.catalina;
 
+import cn.hutool.log.LogFactory;
 import com.john.diytomcat.util.Constant;
 import com.john.diytomcat.util.ServerXMLUtil;
 
@@ -31,7 +32,7 @@ public class Host {
     }
 
     private void scanContextsInServerXML() {
-        List<Context> contexts = ServerXMLUtil.getContexts();
+        List<Context> contexts = ServerXMLUtil.getContexts(this);
         for (Context context : contexts) {
             contextMap.put(context.getPath(), context);
         }
@@ -53,12 +54,25 @@ public class Host {
         else
             path = "/" + path;
         String docBase = folder.getAbsolutePath();
-        Context context = new Context(path, docBase);
+        Context context = new Context(path, docBase,this,true);
 
         contextMap.put(context.getPath(), context);
     }
 
     public Context getContext(String path) {
         return contextMap.get(path);
+    }
+
+    public void reload(Context context){
+        LogFactory.get().info("Reloading Context with name [{}] has started", context.getPath());
+        String path = context.getPath();
+        String docBase = context.getDocBase();
+        boolean reloadable = context.isReloadable();
+
+        context.stop();
+        contextMap.remove(path);
+        Context newContext = new Context(path, docBase, this, reloadable);
+        contextMap.put(newContext.getPath(),newContext);
+        LogFactory.get().info("Reloading Context with name [{}] has completed", context.getPath());
     }
 }
