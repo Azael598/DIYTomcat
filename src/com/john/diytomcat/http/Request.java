@@ -6,6 +6,7 @@ import com.john.diytomcat.catalina.Engine;
 import com.john.diytomcat.catalina.Service;
 import com.john.diytomcat.util.MiniBrowser;
 
+import javax.servlet.ServletContext;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
@@ -90,6 +91,14 @@ public class Request extends BaseRequest{
     @Override
     public String getMethod() {
         return method;
+    }
+
+    public ServletContext getServletContext(){
+        return context.getServletContext();
+    }
+
+    public String getRealPath(String path){
+        return getServletContext().getRealPath(path);
     }
 
 }

@@ -7,6 +7,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
 import com.john.diytomcat.classloader.WebappClassLoader;
 import com.john.diytomcat.exception.WebConfigDuplicatedException;
+import com.john.diytomcat.http.ApplicationContext;
 import com.john.diytomcat.util.Constant;
 import com.john.diytomcat.util.ContextXMLUtil;
 import com.john.diytomcat.watcher.ContextFileChangeWatcher;
@@ -15,6 +16,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import javax.servlet.ServletContext;
 import java.io.File;
 import java.util.*;
 
@@ -25,18 +27,19 @@ public class Context {
     private WebappClassLoader webappClassLoader;
     private Host host;
     private boolean reloadable;
+    private ServletContext servletContext;
 
-    private Map<String,String> url_servletClassName;
+    private Map<String, String> url_servletClassName;
     private Map<String, String> url_servletName;
     private Map<String, String> servletName_className;
     private Map<String, String> className_servletName;
 
     private ContextFileChangeWatcher contextFileChangeWatcher;
 
-    public Context(String path, String docBase, Host host, boolean reloadable ){
+    public Context(String path, String docBase, Host host, boolean reloadable) {
 
-        this.path=path;
-        this.docBase=docBase;
+        this.path = path;
+        this.docBase = docBase;
         this.contextWebXmlFile = new File(docBase, ContextXMLUtil.getWatchedResource());
         this.url_servletClassName = new HashMap<>();
         this.url_servletName = new HashMap<>();
@@ -46,33 +49,38 @@ public class Context {
         this.webappClassLoader = new WebappClassLoader(docBase, commonClassLoader);
         this.host = host;
         this.reloadable = reloadable;
+        this.servletContext = new ApplicationContext(this);
         deploy();
 
 
     }
-    public void stop(){
+
+    public void stop() {
         webappClassLoader.stop();
         contextFileChangeWatcher.stop();
     }
-    public void reload(){
+
+    public void reload() {
         host.reload(this);
     }
-    private void deploy(){
+
+    private void deploy() {
         TimeInterval timeInterval = DateUtil.timer();
-        LogFactory.get().info("Deploying web application directory {}",this.docBase);
+        LogFactory.get().info("Deploying web application directory {}", this.docBase);
         init();
-        if (reloadable){
+        if (reloadable) {
             contextFileChangeWatcher = new ContextFileChangeWatcher(this);
             contextFileChangeWatcher.start();
         }
-        LogFactory.get().info("Deployment of web application directory {} has finished in {} ms", this.docBase,timeInterval.intervalMs());
+        LogFactory.get().info("Deployment of web application directory {} has finished in {} ms", this.docBase, timeInterval.intervalMs());
     }
-    private void init(){
-        if(!contextWebXmlFile.exists())
+
+    private void init() {
+        if (!contextWebXmlFile.exists())
             return;
-        try{
+        try {
             checkDuplicated();
-        }catch (WebConfigDuplicatedException e){
+        } catch (WebConfigDuplicatedException e) {
             e.printStackTrace();
             return;
         }
@@ -80,53 +88,54 @@ public class Context {
         Document d = Jsoup.parse(xml);
         parseServletMapping(d);
     }
-    private void parseServletMapping(Document d){
+
+    private void parseServletMapping(Document d) {
         Elements mappingurlElements = d.select("servlet-mapping url-pattern");
-        for(Element mappingurlElement : mappingurlElements){
+        for (Element mappingurlElement : mappingurlElements) {
             String urlPattern = mappingurlElement.text();
             String servletName = mappingurlElement.parent().select("servlet-name").first().text();
             url_servletName.put(urlPattern, servletName);
         }
         Elements servletNameElements = d.select("servlet servlet-name");
-        for(Element servletNameElement : servletNameElements){
+        for (Element servletNameElement : servletNameElements) {
             String servletName = servletNameElement.text();
             String servletClass = servletNameElement.parent().select("servlet-class").first().text();
             servletName_className.put(servletName, servletClass);
             className_servletName.put(servletClass, servletName);
         }
         Set<String> urls = url_servletName.keySet();
-        for(String url : urls){
+        for (String url : urls) {
             String servletName = url_servletName.get(url);
             String servletClassName = servletName_className.get(servletName);
-            url_servletClassName.put(url,servletClassName);
+            url_servletClassName.put(url, servletClassName);
         }
     }
 
-    private void checkDuplicated(Document d, String mapping, String desc)throws WebConfigDuplicatedException{
+    private void checkDuplicated(Document d, String mapping, String desc) throws WebConfigDuplicatedException {
         Elements elements = d.select(mapping);
-        List<String> contents= new ArrayList<>();
-        for(Element e: elements){
+        List<String> contents = new ArrayList<>();
+        for (Element e : elements) {
             contents.add(e.text());
         }
         Collections.sort(contents);
-        for(int i=0; i<contents.size()-1; i++){
+        for (int i = 0; i < contents.size() - 1; i++) {
             String contentPre = contents.get(i);
-            String contentNext = contents.get(i+1);
-            if(contentPre.equals(contentNext)){
-                throw new WebConfigDuplicatedException(StrUtil.format(desc,contentPre));
+            String contentNext = contents.get(i + 1);
+            if (contentPre.equals(contentNext)) {
+                throw new WebConfigDuplicatedException(StrUtil.format(desc, contentPre));
             }
         }
     }
 
-    private void checkDuplicated() throws WebConfigDuplicatedException{
+    private void checkDuplicated() throws WebConfigDuplicatedException {
         String xml = FileUtil.readUtf8String(contextWebXmlFile);
         Document d = Jsoup.parse(xml);
-        checkDuplicated(d,"servlet-mapping url-pattern","servlet url 重复，请保持其唯一性:{}");
-        checkDuplicated(d,"servlet servlet-name","servlet 名称重复，请保持其唯一性:{}");
-        checkDuplicated(d,"servlet servlet-class","servlet 类名重复，请保持其唯一性:{}");
+        checkDuplicated(d, "servlet-mapping url-pattern", "servlet url 重复，请保持其唯一性:{}");
+        checkDuplicated(d, "servlet servlet-name", "servlet 名称重复，请保持其唯一性:{}");
+        checkDuplicated(d, "servlet servlet-class", "servlet 类名重复，请保持其唯一性:{}");
     }
 
-    public String getServletClassName(String uri){
+    public String getServletClassName(String uri) {
         return url_servletClassName.get(uri);
     }
 
@@ -154,7 +163,11 @@ public class Context {
         this.reloadable = reloadable;
     }
 
-    public WebappClassLoader getWebappClassLoader(){
+    public WebappClassLoader getWebappClassLoader() {
         return webappClassLoader;
+    }
+
+    public ServletContext getServletContext(){
+        return servletContext;
     }
 }
