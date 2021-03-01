@@ -8,15 +8,19 @@ import cn.hutool.log.LogFactory;
 import com.john.diytomcat.classloader.WebappClassLoader;
 import com.john.diytomcat.exception.WebConfigDuplicatedException;
 import com.john.diytomcat.http.ApplicationContext;
+import com.john.diytomcat.http.StandardServletConfig;
 import com.john.diytomcat.util.Constant;
 import com.john.diytomcat.util.ContextXMLUtil;
 import com.john.diytomcat.watcher.ContextFileChangeWatcher;
+import org.apache.tools.ant.taskdefs.condition.Http;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import java.io.File;
 import java.util.*;
 
@@ -28,11 +32,14 @@ public class Context {
     private Host host;
     private boolean reloadable;
     private ServletContext servletContext;
+    private Map<Class<?>, HttpServlet> servletPool;
+    private List<String> loadOnStartupServletClassNames;
 
     private Map<String, String> url_servletClassName;
     private Map<String, String> url_servletName;
     private Map<String, String> servletName_className;
     private Map<String, String> className_servletName;
+    private Map<String, Map<String,String>> servlet_className_init_params;
 
     private ContextFileChangeWatcher contextFileChangeWatcher;
 
@@ -50,6 +57,9 @@ public class Context {
         this.host = host;
         this.reloadable = reloadable;
         this.servletContext = new ApplicationContext(this);
+        this.servletPool = new HashMap<>();
+        this.servlet_className_init_params = new HashMap<>();
+        this.loadOnStartupServletClassNames = new ArrayList<>();
         deploy();
 
 
@@ -58,6 +68,7 @@ public class Context {
     public void stop() {
         webappClassLoader.stop();
         contextFileChangeWatcher.stop();
+        destroyServlets();
     }
 
     public void reload() {
@@ -87,6 +98,9 @@ public class Context {
         String xml = FileUtil.readUtf8String(contextWebXmlFile);
         Document d = Jsoup.parse(xml);
         parseServletMapping(d);
+        parseServletInitParams(d);
+        parseLoadOnStartup(d);
+        handleLoadOnStartup();
     }
 
     private void parseServletMapping(Document d) {
@@ -109,6 +123,24 @@ public class Context {
             String servletClassName = servletName_className.get(servletName);
             url_servletClassName.put(url, servletClassName);
         }
+    }
+
+    private void parseServletInitParams(Document d){
+        Elements servletClassNameElements = d.select("servlet-class");
+        for(Element servletClassNameElement :servletClassNameElements){
+            String servletClassName = servletClassNameElement.text();
+            Elements initElements = servletClassNameElement.parent().select("init-param");
+            if(initElements.isEmpty())
+                continue;
+            Map<String,String> initParams = new HashMap<>();
+            for(Element element : initElements){
+                String name = element.select("param-name").get(0).text();
+                String value = element.select("param-value").get(0).text();
+                initParams.put(name, value);
+            }
+            servlet_className_init_params.put(servletClassName,initParams);
+        }
+//        System.out.println("class_name_init_params:"+servlet_className_init_params);
     }
 
     private void checkDuplicated(Document d, String mapping, String desc) throws WebConfigDuplicatedException {
@@ -167,7 +199,48 @@ public class Context {
         return webappClassLoader;
     }
 
-    public ServletContext getServletContext(){
+    public ServletContext getServletContext() {
         return servletContext;
+    }
+
+    public synchronized HttpServlet getServlet(Class<?> clazz) throws InstantiationException, IllegalAccessException, ServletException {
+        HttpServlet servlet = servletPool.get(clazz);
+        if (null == servlet) {
+            servlet = (HttpServlet) clazz.newInstance();
+            ServletContext servletContext = this.getServletContext();
+            String className = clazz.getName();
+            String servletName = className_servletName.get(className);
+            Map<String, String> initParameters = servlet_className_init_params.get(className);
+            StandardServletConfig servletConfig = new StandardServletConfig(servletContext, servletName, initParameters);
+            servlet.init(servletConfig);
+            servletPool.put(clazz, servlet);
+        }
+        return servlet;
+    }
+
+    private void destroyServlets(){
+        Collection<HttpServlet>servlets=servletPool.values();
+        for(HttpServlet servlet : servlets){
+            servlet.destroy();
+        }
+    }
+
+    private void parseLoadOnStartup(Document d){
+        Elements es = d.select("load-on-startup");
+        for(Element e:es){
+            String loadOnStartupServletClassName = e.parent().select("servlet-class").text();
+            loadOnStartupServletClassNames.add(loadOnStartupServletClassName);
+        }
+    }
+
+    public void handleLoadOnStartup(){
+        for(String loadOnStartupServletClassName : loadOnStartupServletClassNames){
+            try{
+                Class<?> clazz = webappClassLoader.loadClass(loadOnStartupServletClassName);
+                getServlet(clazz);
+            }catch (ClassNotFoundException | InstantiationException | IllegalAccessException | ServletException e){
+                e.printStackTrace();
+            }
+        }
     }
 }
