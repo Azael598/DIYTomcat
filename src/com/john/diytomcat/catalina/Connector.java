@@ -1,26 +1,53 @@
 package com.john.diytomcat.catalina;
 
-import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.thread.ThreadUtil;
-import cn.hutool.core.util.ArrayUtil;
-import cn.hutool.core.util.StrUtil;
-import cn.hutool.log.LogFactory;
-import com.john.diytomcat.http.Request;
-import com.john.diytomcat.http.Response;
-import com.john.diytomcat.util.Constant;
-import com.john.diytomcat.util.ThreadPoolUtil;
-import com.john.diytomcat.util.WebXMLUtil;
-
-import java.io.File;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import com.john.diytomcat.http.Request;
+import com.john.diytomcat.http.Response;
+import com.john.diytomcat.util.ThreadPoolUtil;
+import cn.hutool.log.LogFactory;
 
 public class Connector implements Runnable {
     int port;
     private Service service;
 
+    private String compression;
+    private int compressionMinSize;
+    private String noCompressionUserAgents;
+    private String compressableMimeType;
+    public String getCompression() {
+        return compression;
+    }
+
+    public void setCompression(String compression) {
+        this.compression = compression;
+    }
+
+    public int getCompressionMinSize() {
+        return compressionMinSize;
+    }
+
+    public void setCompressionMinSize(int compressionMinSize) {
+        this.compressionMinSize = compressionMinSize;
+    }
+
+    public String getNoCompressionUserAgents() {
+        return noCompressionUserAgents;
+    }
+
+    public void setNoCompressionUserAgents(String noCompressionUserAgents) {
+        this.noCompressionUserAgents = noCompressionUserAgents;
+    }
+
+    public String getCompressableMimeType() {
+        return compressableMimeType;
+    }
+
+    public void setCompressableMimeType(String compressableMimeType) {
+        this.compressableMimeType = compressableMimeType;
+    }
     public Connector(Service service) {
         this.service = service;
     }
@@ -37,30 +64,31 @@ public class Connector implements Runnable {
     public void run() {
         try {
             ServerSocket ss = new ServerSocket(port);
-            while (true) {
+            while(true) {
                 Socket s = ss.accept();
                 Runnable r = new Runnable() {
                     @Override
                     public void run() {
                         try {
-                            Request request = new Request(s, service);
+                            Request request = new Request(s, Connector.this);
                             Response response = new Response();
                             HttpProcessor processor = new HttpProcessor();
-                            processor.execute(s,request,response);
+                            processor.execute(s,request, response);
                         } catch (IOException e) {
                             e.printStackTrace();
                         } finally {
-                            try {
-                                if (!s.isClosed())
+                            if (!s.isClosed())
+                                try {
                                     s.close();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                         }
                     }
                 };
                 ThreadPoolUtil.run(r);
             }
+
         } catch (IOException e) {
             LogFactory.get().error(e);
             e.printStackTrace();
@@ -68,12 +96,12 @@ public class Connector implements Runnable {
     }
 
     public void init() {
-        LogFactory.get().info("Initializing ProtocolHandler [http-bio-{}]", port);
+        LogFactory.get().info("Initializing ProtocolHandler [http-bio-{}]",port);
     }
 
     public void start() {
-        LogFactory.get().info("Starting ProtocolHandler [http-bio-{}]", port);
+        LogFactory.get().info("Starting ProtocolHandler [http-bio-{}]",port);
         new Thread(this).start();
     }
-}
 
+}

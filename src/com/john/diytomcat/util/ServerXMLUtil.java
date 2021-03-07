@@ -1,8 +1,8 @@
 package com.john.diytomcat.util;
 
+import com.john.diytomcat.catalina.*;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.io.FileUtil;
-import com.john.diytomcat.catalina.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,11 +16,22 @@ public class ServerXMLUtil {
         List<Connector> result = new ArrayList<>();
         String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
         Document d = Jsoup.parse(xml);
+
         Elements es = d.select("Connector");
         for (Element e : es) {
             int port = Convert.toInt(e.attr("port"));
+            String compression = e.attr("compression");
+
+            int compressionMinSize = Convert.toInt(e.attr("compressionMinSize"), 0);
+            String noCompressionUserAgents = e.attr("noCompressionUserAgents");
+            String compressableMimeType = e.attr("compressableMimeType");
             Connector c = new Connector(service);
             c.setPort(port);
+            c.setCompression(compression);
+            c.setCompressableMimeType(compressableMimeType);
+            c.setNoCompressionUserAgents(noCompressionUserAgents);
+            c.setCompressableMimeType(compressableMimeType);
+            c.setCompressionMinSize(compressionMinSize);
             result.add(c);
         }
         return result;
@@ -45,6 +56,7 @@ public class ServerXMLUtil {
     public static String getEngineDefaultHost() {
         String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
         Document d = Jsoup.parse(xml);
+
         Element host = d.select("Engine").first();
         return host.attr("defaultHost");
     }
@@ -65,7 +77,7 @@ public class ServerXMLUtil {
         Elements es = d.select("Host");
         for (Element e : es) {
             String name = e.attr("name");
-            Host host = new Host(name, engine);
+            Host host = new Host(name,engine);
             result.add(host);
         }
         return result;
