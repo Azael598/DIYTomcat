@@ -62,4 +62,6 @@ public class Constant {
 
     public static final File webXmlFile = new File(confFolder, "web.xml");
     public static final File contextXmlFile = new File(confFolder, "context.xml");
+
+    public static final String workFolder = SystemUtil.get("user.dir") + File.separator + "work";
 }

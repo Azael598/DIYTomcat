@@ -12,6 +12,8 @@ import com.john.diytomcat.http.StandardServletConfig;
 import com.john.diytomcat.util.Constant;
 import com.john.diytomcat.util.ContextXMLUtil;
 import com.john.diytomcat.watcher.ContextFileChangeWatcher;
+import org.apache.jasper.JspC;
+import org.apache.jasper.compiler.JspRuntimeContext;
 import org.apache.tools.ant.taskdefs.condition.Http;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -83,6 +85,8 @@ public class Context {
             contextFileChangeWatcher = new ContextFileChangeWatcher(this);
             contextFileChangeWatcher.start();
         }
+        JspC c = new JspC();
+        new JspRuntimeContext(servletContext,c);
         LogFactory.get().info("Deployment of web application directory {} has finished in {} ms", this.docBase, timeInterval.intervalMs());
     }
 
@@ -242,5 +246,9 @@ public class Context {
                 e.printStackTrace();
             }
         }
+    }
+
+    public WebappClassLoader getWebClassLoader(){
+        return webappClassLoader;
     }
 }
