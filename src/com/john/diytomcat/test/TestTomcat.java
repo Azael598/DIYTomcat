@@ -195,6 +195,26 @@ public class TestTomcat {
         String html = getContentString("/javaweb/");
         Assert.assertEquals(html,"hello jsp@javaweb");
     }
+
+    @Test
+    public void testClientJump(){
+        String http_servlet = getHttpString("/javaweb/jump1");
+        containAssert(http_servlet,"HTTP/1.1 302 Found");
+        String http_jsp = getHttpString("/javaweb/jump1.jsp");
+        containAssert(http_jsp,"HTTP/1.1 302 Found");
+    }
+
+    @Test
+    public void testServerJump(){
+        String http_servlet = getHttpString("/javaweb/jump2");
+        containAssert(http_servlet,"Hello DIY Tomcat from HelloServlet");
+    }
+
+    @Test
+    public void testServerJumpWithAttributes(){
+        String http_servlet = getHttpString("/javaweb/jump2");
+        containAssert(http_servlet,"Hello DIY Tomcat from HelloServlet@javaweb, the name is gareen");
+    }
     private byte[] getContentBytes(String uri) {
         return getContentBytes(uri,false);
     }

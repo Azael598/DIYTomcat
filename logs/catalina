@@ -1,112 +1,324 @@
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 18:50:46 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
-INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 118 ms
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 18:50:46 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 267 ms
+03 09, 2021 18:50:46 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
-INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee has finished in 4 ms
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 18:50:46 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee has finished in 43 ms
+03 09, 2021 18:50:46 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
-INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 1 ms
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 18:50:46 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 2 ms
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 1 ms
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory d:/Projects/idea_projects/javaweb/web
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Context deploy
-INFO : Deployment of web application directory d:/Projects/idea_projects/javaweb/web has finished in 15 ms
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/javaweb/web has finished in 18 ms
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Server version:		DIYTomcat/1.0.0
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Server built:		2020-11-1 14:11:00
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Server number:		1.0.1
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : OS Name	:		Windows 10
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : OS Version:		10.0
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Architecture:		amd64
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : JVM Version:		1.8.0_271-b09
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : JVM Vendor:		Oracle Corporation
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Connector init
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Connector init
 INFO : Initializing ProtocolHandler [http-bio-18080]
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Connector init
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Connector init
 INFO : Initializing ProtocolHandler [http-bio-18081]
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Connector init
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Connector init
 INFO : Initializing ProtocolHandler [http-bio-18082]
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Service init
-INFO : Initialization processed in 3 ms
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Connector start
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Service init
+INFO : Initialization processed in 0 ms
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Connector start
 INFO : Starting ProtocolHandler [http-bio-18080]
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Connector start
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Connector start
 INFO : Starting ProtocolHandler [http-bio-18081]
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Connector start
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Connector start
 INFO : Starting ProtocolHandler [http-bio-18082]
-03 08, 2021 20:02:33 下午 com.john.diytomcat.catalina.Server start
-INFO : Server startup in 9 ms
-03 08, 2021 20:24:25 下午 com.john.diytomcat.catalina.Context deploy
-INFO : Deploying web application directory d:/Projects/idea_projects/javaweb/web
-03 08, 2021 20:24:25 下午 com.john.diytomcat.catalina.Context deploy
-INFO : Deployment of web application directory d:/Projects/idea_projects/javaweb/web has finished in 214 ms
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 18:50:47 下午 com.john.diytomcat.catalina.Server start
+INFO : Server startup in 12 ms
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
-INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 176 ms
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 177 ms
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee has finished in 4 ms
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 1 ms
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
-INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 1 ms
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 0 ms
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
 INFO : Deploying web application directory d:/Projects/idea_projects/javaweb/web
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Context deploy
-INFO : Deployment of web application directory d:/Projects/idea_projects/javaweb/web has finished in 56 ms
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/javaweb/web has finished in 35 ms
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Server version:		DIYTomcat/1.0.0
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Server built:		2020-11-1 14:11:00
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Server number:		1.0.1
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : OS Name	:		Windows 10
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : OS Version:		10.0
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Architecture:		amd64
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : JVM Version:		1.8.0_271-b09
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server logJVM
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server logJVM
 INFO : JVM Vendor:		Oracle Corporation
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Connector init
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Connector init
 INFO : Initializing ProtocolHandler [http-bio-18080]
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Connector init
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Connector init
 INFO : Initializing ProtocolHandler [http-bio-18081]
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Connector init
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Connector init
 INFO : Initializing ProtocolHandler [http-bio-18082]
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Service init
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Service init
 INFO : Initialization processed in 1 ms
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Connector start
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Connector start
 INFO : Starting ProtocolHandler [http-bio-18080]
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Connector start
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Connector start
 INFO : Starting ProtocolHandler [http-bio-18081]
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Connector start
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Connector start
 INFO : Starting ProtocolHandler [http-bio-18082]
-03 08, 2021 21:29:42 下午 com.john.diytomcat.catalina.Server start
+03 09, 2021 19:33:41 下午 com.john.diytomcat.catalina.Server start
 INFO : Server startup in 5 ms
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 185 ms
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee has finished in 8 ms
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 1 ms
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 2 ms
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory d:/Projects/idea_projects/javaweb/web
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/javaweb/web has finished in 25 ms
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.1
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18080]
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18081]
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18082]
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Service init
+INFO : Initialization processed in 1 ms
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18080]
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18081]
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18082]
+03 09, 2021 20:27:26 下午 com.john.diytomcat.catalina.Server start
+INFO : Server startup in 8 ms
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 193 ms
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee has finished in 5 ms
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 4 ms
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 0 ms
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory d:/Projects/idea_projects/javaweb/web
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/javaweb/web has finished in 33 ms
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.1
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18080]
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18081]
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18082]
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Service init
+INFO : Initialization processed in 1 ms
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18080]
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18081]
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18082]
+03 09, 2021 20:27:41 下午 com.john.diytomcat.catalina.Server start
+INFO : Server startup in 7 ms
+03 09, 2021 20:28:19 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+03 09, 2021 20:28:19 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 147 ms
+03 09, 2021 20:28:19 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee
+03 09, 2021 20:28:19 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee has finished in 4 ms
+03 09, 2021 20:28:19 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+03 09, 2021 20:28:19 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 1 ms
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 1 ms
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory d:/Projects/idea_projects/javaweb/web
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/javaweb/web has finished in 17 ms
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.1
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18080]
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18081]
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18082]
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Service init
+INFO : Initialization processed in 1 ms
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18080]
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18081]
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18082]
+03 09, 2021 20:28:20 下午 com.john.diytomcat.catalina.Server start
+INFO : Server startup in 8 ms
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\a
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\a has finished in 168 ms
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\j2ee has finished in 4 ms
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory D:\Projects\idea_projects\diytomcat\webapps\ROOT has finished in 2 ms
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory d:/Projects/idea_projects/diytomcat/b
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/diytomcat/b has finished in 0 ms
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deploying web application directory d:/Projects/idea_projects/javaweb/web
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Context deploy
+INFO : Deployment of web application directory d:/Projects/idea_projects/javaweb/web has finished in 17 ms
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server version:		DIYTomcat/1.0.0
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server built:		2020-11-1 14:11:00
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Server number:		1.0.1
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Name	:		Windows 10
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : OS Version:		10.0
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Architecture:		amd64
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : Java Home:		C:\Program Files\Java\jdk1.8.0_271\jre
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Version:		1.8.0_271-b09
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server logJVM
+INFO : JVM Vendor:		Oracle Corporation
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18080]
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18081]
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Connector init
+INFO : Initializing ProtocolHandler [http-bio-18082]
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Service init
+INFO : Initialization processed in 1 ms
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18080]
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18081]
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-18082]
+03 09, 2021 21:14:53 下午 com.john.diytomcat.catalina.Server start
+INFO : Server startup in 6 ms

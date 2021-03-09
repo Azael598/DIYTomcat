@@ -34,12 +34,18 @@ public class HttpProcessor {
             else
                 DefaultServlet.getInstance().service(request,response);
 
+            if(request.isForwarded())
+                return;
             if(Constant.CODE_200 == response.getStatus()){
                 handle200(s, request, response);
                 return;
             }
             if(Constant.CODE_404 == response.getStatus()){
                 handle404(s, uri);
+                return;
+            }
+            if(Constant.CODE_302 == response.getStatus()){
+                handle302(s, response);
                 return;
             }
 
@@ -88,6 +94,14 @@ public class HttpProcessor {
 
     }
 
+    private void handle302(Socket s, Response response)throws IOException{
+        OutputStream os = s.getOutputStream();
+        String redirectPath = response.getRedirectPath();
+        String head_text = Constant.response_head_302;
+        String header = StrUtil.format(head_text, redirectPath);
+        byte[] responseBytes = header.getBytes("utf-8");
+        os.write(responseBytes);
+    }
     private void handle404(Socket s, String uri) throws IOException {
         OutputStream os = s.getOutputStream();
         String responseText = StrUtil.format(Constant.textFormat_404, uri, uri);
