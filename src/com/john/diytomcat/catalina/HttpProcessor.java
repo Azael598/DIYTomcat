@@ -10,10 +10,13 @@ import com.john.diytomcat.util.SessionManager;
 import cn.hutool.core.util.*;
 import cn.hutool.log.LogFactory;
 
+import javax.servlet.Filter;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.List;
 
 public class HttpProcessor {
     public void execute(Socket s, Request request, Response response){
@@ -27,12 +30,16 @@ public class HttpProcessor {
             Context context = request.getContext();
             String servletClassName = context.getServletClassName(uri);
 
+            HttpServlet workingServlet;
             if(null!=servletClassName)
-                InvokerServlet.getInstance().service(request,response);
+                workingServlet = InvokerServlet.getInstance();
             else if (uri.endsWith(".jsp"))
-                JspServlet.getInstance().service(request,response);
+                workingServlet = JspServlet.getInstance();
             else
-                DefaultServlet.getInstance().service(request,response);
+                workingServlet = DefaultServlet.getInstance();
+            List<Filter> filters = request.getContext().getMatchedFilters(request.getRequestURI());
+            ApplicationFilterChain filterChain = new ApplicationFilterChain(filters,workingServlet);
+            filterChain.doFilter(request,response);
 
             if(request.isForwarded())
                 return;

@@ -390,4 +390,37 @@ public class Context {
             }
         }
     }
+    private boolean match(String pattern, String uri){
+        if(StrUtil.equals(pattern,uri))
+            return true;
+        if(StrUtil.equals(pattern,"/*"))
+            return true;
+        if(StrUtil.startWith(pattern,"/*.")){
+            String patternExtName = StrUtil.subAfter(pattern,".",false);
+            String uriExtName = StrUtil.subAfter(uri,".",false);
+            if(StrUtil.equals(patternExtName,uriExtName))
+                return true;
+        }
+        return false;
+    }
+    public List<Filter> getMatchedFilters(String uri){
+        List<Filter> filters = new ArrayList<>();
+        Set<String> patterns = url_filterClassName.keySet();
+        Set<String> matchedPatterns = new HashSet<>();
+        for(String pattern : patterns){
+            if(match(pattern,uri)){
+                matchedPatterns.add(pattern);
+            }
+        }
+        Set<String> matchedFilterClassNames = new HashSet<>();
+        for(String pattern : matchedPatterns){
+            List<String> filterClassName = url_filterClassName.get(pattern);
+            matchedFilterClassNames.addAll(filterClassName);
+        }
+        for(String filterClassName : matchedFilterClassNames){
+            Filter filter = filterPool.get(filterClassName);
+            filters.add(filter);
+        }
+        return filters;
+    }
 }
