@@ -3,6 +3,7 @@ package com.john.diytomcat.catalina;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.io.IORuntimeException;
 import cn.hutool.core.util.ReflectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
@@ -55,6 +56,8 @@ public class Context {
     private Map<Class<?>, HttpServlet> servletPool;
     private Map<String, Filter> filterPool;
 
+    private List<ServletContextListener> listeners;
+
     public Context(String path, String docBase, Host host, boolean reloadable) {
         TimeInterval timeInterval = DateUtil.timer();
         this.host = host;
@@ -85,6 +88,7 @@ public class Context {
 
         this.servletPool = new HashMap<>();
         this.filterPool = new HashMap<>();
+        this.listeners = new ArrayList<ServletContextListener>();
 
         LogFactory.get().info("Deploying web application directory {}", this.docBase);
         deploy();
@@ -96,6 +100,7 @@ public class Context {
     }
 
     private void deploy() {
+        loadListeners();
         init();
 
         if(reloadable){
@@ -108,6 +113,7 @@ public class Context {
     }
 
     private void init() {
+        fireEvent("init");
         if (!contextWebXmlFile.exists())
             return;
 
@@ -214,7 +220,7 @@ public class Context {
     public void stop() {
         webappClassLoader.stop();
         contextFileChangeWatcher.stop();
-
+        fireEvent("destroy");
         destroyServlets();
     }
 
@@ -423,4 +429,38 @@ public class Context {
         }
         return filters;
     }
+
+    public void addListener(ServletContextListener listener){
+        listeners.add(listener);
+    }
+
+    public void loadListeners(){
+        try{
+            if(!contextWebXmlFile.exists())
+                return;
+            String xml = FileUtil.readUtf8String(contextWebXmlFile);
+            Document d = Jsoup.parse(xml);
+
+            Elements es = d.select("listener listener-class");
+            for(Element e : es){
+                String listenClassName = e.text();
+                Class<?> clazz = this.getWebClassLoader().loadClass(listenClassName);
+                ServletContextListener listener = (ServletContextListener) clazz.newInstance();
+                addListener(listener);
+            }
+        }catch (IORuntimeException | ClassNotFoundException | InstantiationException | IllegalAccessException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void fireEvent(String type){
+        ServletContextEvent event = new ServletContextEvent(servletContext);
+        for(ServletContextListener servletContextListener : listeners){
+            if("init".equals(type))
+                servletContextListener.contextInitialized(event);
+            if("destroy".equals(type))
+                servletContextListener.contextDestroyed(event);
+        }
+    }
+
 }

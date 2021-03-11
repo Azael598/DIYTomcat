@@ -215,6 +215,19 @@ public class TestTomcat {
         String http_servlet = getHttpString("/javaweb/jump2");
         containAssert(http_servlet,"Hello DIY Tomcat from HelloServlet@javaweb, the name is gareen");
     }
+
+    @Test
+    public void testJavaweb0Hello() {
+        String html = getContentString("/javaweb0/hello");
+        containAssert(html,"Hello DIY Tomcat from HelloServlet@javaweb");
+    }
+    
+    @Test
+    public void testJavaweb1Hello() {
+        String html = getContentString("/javaweb1/hello");
+        containAssert(html,"Hello DIY Tomcat from HelloServlet@javaweb");
+    }
+
     private byte[] getContentBytes(String uri) {
         return getContentBytes(uri,false);
     }
